@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
     public float speed = 10.0f;
-    public float xRange = 10;
+    private float xRange = 10;
     public GameObject projectilePrefab;
 
     // Start is called before the first frame update
@@ -31,15 +31,13 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
             //throwing the projectile with spacebar
-         {
-         if (Input.GetKeyDown(KeyCode.Space))
-         Debug.Log("is this working??");
-         {
+      
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
                 //launch projectile
-                 Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-                 //Debug.Log("is this working??2");
-         }
-         }
+                Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            }
+      
         
     }
 }
